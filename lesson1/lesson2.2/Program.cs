@@ -29,16 +29,28 @@ namespace lesson2._2
             Console.WriteLine("Средняя температура за сегодня: " + (tmax + tmin) / 2);
             Console.Write("Введите номер текущего месяца: ");
 
+            string f;
+            bool check;
             int mon;
             do
             {
-                mon = Convert.ToInt32(Console.ReadLine());
-                if (mon < 1 || mon > 12)
+                f = Console.ReadLine();
+                check = int.TryParse(f, out mon);
+                if (check)
                 {
-                    Console.Write("Ошибка ввода, введите корректный номер месяца: ");
+                    mon = Convert.ToInt32(f);
+
+                    if (mon < 1 || mon > 12 || !check)
+                    {
+                        Console.Write("Ошибка ввода, введите корректный номер месяца: ");
+                    }
                 }
+                else _ = (!check);
+                
+                Console.Write("Ошибка ввода, введите корректный номер месяца: ");
+                
             }
-            while (mon < 1 || mon > 12);
+            while (mon < 1 || mon > 12 || !check);
             
             if (mon == Convert.ToInt32((Month)mon) && (tmax + tmin) / 2 > 0 || mon == Convert.ToInt32((Month)1 | (Month)2 | (Month)12))
                 {
