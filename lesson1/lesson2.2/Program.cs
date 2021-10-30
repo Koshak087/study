@@ -3,7 +3,23 @@
 namespace lesson2._2
 {
     class Program
+
     {
+        enum Month
+        {
+            Январь = 1,
+            Февраль,
+            Март,
+            Апрель,
+            Май,
+            Июнь,
+            Июль,
+            Август,
+            Сентябрь,
+            Октябрь,
+            Ноябрь,
+            Декабрь
+        }
         static void Main(string[] args)
         {
             Console.Write("Введите маскимальную температуру за текущие сутки:");
@@ -11,64 +27,24 @@ namespace lesson2._2
             Console.Write("Введите минимальную температуру за текущие сутки:");
             double tmin = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Средняя температура за сегодня: " + (tmax + tmin) / 2);
-            
+
             Console.Write("Введите номер текущего месяца: ");
             int mon = Convert.ToInt32(Console.ReadLine());
-            switch (mon)
+            if (mon == Convert.ToInt32((Month)mon) || mon == Convert.ToInt32((Month)1 | (Month)2 | (Month)12) || (tmax + tmin) / 2 >= 0)
             {
-                case 1:
-                    Console.WriteLine("Сейчас январь.");
-                    if (tmax+tmin/2 > 0)
-                    {
-                        Console.WriteLine("Доджливая Зима");
-                    }
-                    break;
-                case 2:
-                    Console.WriteLine("Сейчас февраль.");
-                    if (tmax + tmin / 2 > 0)
-                    {
-                        Console.WriteLine("Доджливая Зима");
-                    }
-                    break;
-                case 3:
-                    Console.WriteLine("Сейчас март.");
-                    break;
-                case 4:
-                    Console.WriteLine("Сейчас апрель.");
-                    break;
-                case 5:
-                    Console.WriteLine("Сейчас май.");
-                    break;
-                case 6:
-                    Console.WriteLine("Сейчас июнь.");
-                    break;
-                case 7:
-                    Console.WriteLine("Сейчас июль.");
-                    break;
-                case 8:
-                    Console.WriteLine("Сейчас август.");
-                    break;
-                case 9:
-                    Console.WriteLine("Сейчас сентябрь.");
-                    break;
-                case 10:
-                    Console.WriteLine("Сейчас октябрь.");
-                    break;
-                case 11:
-                    Console.WriteLine("Сейчас ноябрь.");
-                    break;
-                case 12:
-                    Console.WriteLine("Сейчас декабрь.");
-                    if (tmax + tmin / 2 > 0)
-                    {
-                        Console.WriteLine("Доджливая Зима");
-                    }
-                    break;
+                Console.WriteLine($"Текущий месяц {(Month)mon}");
+                Console.WriteLine("Дождливая зима");
+
+            }
+            else
+            {
+                Console.WriteLine($"Текущий месяц {(Month)mon}");
             }
             Console.ReadLine();
         }
     }
 }
+
 
 
 
