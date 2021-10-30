@@ -11,6 +11,7 @@ namespace lesson2
             Console.Write("Введите минимальную температуру за текущие сутки:");
             double tmin = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Средняя температура за сегодня: " + (tmax + tmin) / 2);
+            Console.ReadLine();
         }
     }
 }
