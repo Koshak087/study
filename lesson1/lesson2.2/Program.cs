@@ -30,7 +30,7 @@ namespace lesson2._2
 
             Console.Write("Введите номер текущего месяца: ");
             int mon = Convert.ToInt32(Console.ReadLine());
-            if (mon == Convert.ToInt32((Month)mon) || mon == Convert.ToInt32((Month)1 | (Month)2 | (Month)12) || (tmax + tmin) / 2 >= 0)
+            if (mon == Convert.ToInt32((Month)mon) && (tmax + tmin) / 2 > 0 || mon == Convert.ToInt32((Month)1 | (Month)2 | (Month)12))
             {
                 Console.WriteLine($"Текущий месяц {(Month)mon}");
                 Console.WriteLine("Дождливая зима");
