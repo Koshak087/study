@@ -1,35 +1,32 @@
 ﻿using System;
 
-namespace lesson3._1
+namespace lesson3._2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите диапазон двумерного массива: ");
-            int a = int.Parse(Console.ReadLine());
-            int[,] mas = new int[a, a];
-            int k = 0;
-            for (int i = 0; i < mas.GetLength(0); i++)
+            string[,] phone = new string[5, 2]
+            {                
+                {"Василий" , " +79903601236" },
+                {"Николай" ,  " nikolya98@mail.ru" },
+                {"Дмитрий" ,  " +79036344575" },
+                {"Денис" ,  " +79163355975, pupkov77@mail.ru" },
+                {"Владимир" ,  " +79989463215" },
+            };
+
+            Console.WriteLine("Имя     Телефон, e-mail");
+
+            for (int l = 0; l < phone.GetLength(0); l++)
             {
-                for (int j = 0; j < mas.GetLength(1); j++)
+                for (int j = 0; j < phone.GetLength(1); j++)
                 {
-                    if (i == j)
-                    {
-                        mas[i, j] = k;
-                        Console.Write($"{mas[i, j]}");
-                    }
-                    else
-                    {
-                        Console.Write($"{mas[i, j]}");
-                    }                                         
+                    Console.Write(phone[l, j]);
                 }
-                k++;
                 Console.WriteLine();
             }
-
+            
+            Console.ReadLine();
         }
     }
 }
-
-

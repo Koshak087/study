@@ -6,41 +6,30 @@ namespace lesson3._1
     {
         static void Main(string[] args)
         {
-            char[] rev = { };
-
-            string k;
-
-
-            while (true)
+            Console.WriteLine("Введите диапазон двумерного массива: ");
+            int a = int.Parse(Console.ReadLine());
+            int[,] mas = new int[a, a];
+            int k = 0;
+            for (int i = 0; i < mas.GetLength(0); i++)
             {
-                Console.Write("Введите слово (для прекращения введите 'exit'): ");
-
-                k = Console.ReadLine();
-
-                if (k == "exit")
+                for (int j = 0; j < mas.GetLength(1); j++)
                 {
-                    break;
-                }
-                else
-                {
-                    rev = k.ToCharArray();
-                }
-                for (int i = rev.Length - 1; i > -1; i--)
-                {
-                    
-                    if (i == 0)
+                    if (i == j)
                     {
-                        ;
-                        Console.WriteLine(rev[i] + "\n");
+                        mas[i, j] = k;
+                        Console.Write($"{mas[i, j]}");
                     }
                     else
                     {
-                        Console.Write(rev[i]);
-                    }
+                        Console.Write($"{mas[i, j]}");
+                    }                                         
                 }
+                k++;
+                Console.WriteLine();
             }
-            Console.WriteLine("end");
-            Console.ReadLine();
+
         }
     }
 }
+
+
