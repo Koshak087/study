@@ -13,14 +13,12 @@ namespace lesson4._3
             Осень = 4
         }
 
-
         static void Main(string[] args)
         {
             int ok;
             bool control;
             string mon;
             Console.Write("Введите номер текущего месяца: ");
-
             do
             {
                 mon = Console.ReadLine();
