@@ -12,7 +12,6 @@ namespace lesson4._3
             Лето = 3,
             Осень = 4
         }
-        
 
         static void Main(string[] args)
         {
@@ -20,7 +19,6 @@ namespace lesson4._3
             bool control;
             string mon;
             Console.Write("Введите номер текущего месяца: ");
-            
             do
             {
                 mon = Console.ReadLine();
@@ -35,7 +33,7 @@ namespace lesson4._3
             while (!control);
             checker(mon);
         }
-        private static void checker (string c)
+        private static void checker(string c)
         {
             int mon;
             int seas = 0;
@@ -68,7 +66,5 @@ namespace lesson4._3
 
         }
 
-     }
+    }
 }
-
-
